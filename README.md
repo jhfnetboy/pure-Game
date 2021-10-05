@@ -1,0 +1,2 @@
+# pure-Game
+game scanffold
