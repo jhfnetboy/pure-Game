@@ -509,6 +509,11 @@
     "@types/sinon-chai" "^3.2.3"
     "@types/web3" "1.0.19"
 
+"@openzeppelin/contracts@^4.3.2":
+  version "4.3.2"
+  resolved "https://registry.nlark.com/@openzeppelin/contracts/download/@openzeppelin/contracts-4.3.2.tgz#ff80affd6d352dbe1bbc5b4e1833c41afd6283b6"
+  integrity sha1-/4Cv/W01Lb4bvFtOGDPEGv1ig7Y=
+
 "@resolver-engine/core@^0.3.3":
   version "0.3.3"
   resolved "https://registry.npm.taobao.org/@resolver-engine/core/download/@resolver-engine/core-0.3.3.tgz#590f77d85d45bc7ecc4e06c654f41345db6ca967"
