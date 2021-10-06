@@ -5,7 +5,8 @@ import { faDog } from '@fortawesome/free-solid-svg-icons'
 import { providers } from 'ethers';
 // import { Provider } from '@ethersproject/providers'
 import React, { useEffect, useRef, useState } from 'react';
-import useGreeter from './hooks/useGreeter';
+// import useGreeter from './hooks/useGreeter';
+import useWalker from './hooks/useWalker';
 import useNetwork from './hooks/useNetwork';
 
 // function App(): JSX.Element {
@@ -13,12 +14,12 @@ function App(){
       // wallet connect
       const [network, setNetwork] = useState<providers.Network>()
       const [account, setAccount] = useState<string>()
-      const [greet, setGreet] = useState<string>()
+      const [walker, setWalker] = useState<string>()
       const [appMsg, setAppMsg] = useState<string>()
       const inputElm = useRef<HTMLInputElement>(document.createElement("input"))
-
+      const walkerID = 1
       const [{ web3 }, handleNetwork] = useNetwork()
-      const [fetchGreeting, setGreeting] = useGreeter({ web3 })
+      const [tokenWalkerName, _setTokenName] = useWalker({ web3 })
 
       useEffect(() => {
         if (typeof web3 === "undefined") {
@@ -38,7 +39,7 @@ function App(){
       const initFields = () => {
         setNetwork(undefined)
         setAccount(undefined)
-        setGreet(undefined)
+        setWalker(undefined)
       }
 
       const showAppMsg = (err: any) => {
@@ -52,11 +53,12 @@ function App(){
       }
 
       const handleFetch = async () => {
-        fetchGreeting().then(setGreet).catch(showAppMsg)
+        tokenWalkerName(walkerID).then(setWalker).catch(showAppMsg)
       }
 
       const handleSet = () => {
-        setGreeting(inputElm.current.value)
+        console.log("set here")
+        _setTokenName(walkerID, inputElm.current.value)
           .then(() => {
             inputElm.current.value = ""
             handleFetch()
@@ -125,20 +127,20 @@ function App(){
                  
                 </div>
                 </div>
-                <div>
-                  <h5>Hardhat Ethers Greeter Dapp Demo</h5>
+                <div className="text-white bg-custom-black py-1 px-2 text-xl">
                   <button onClick={handleConnect}>{web3 ? "Disconnect" : "Connect"}</button><br />
-                  <button onClick={handleFetch}>Fetch Greeting</button><br />
-                  <button onClick={handleSet}>Set Greeting</button>
-                  <input ref={inputElm} placeholder="Set greeting" /><br />
+                  <button onClick={handleFetch}>Fetch My Player info</button><br />
+                  <button onClick={handleSet}>Set New Name</button>
+                  <input ref={inputElm} placeholder="reSet My Player Name" /><br />
                   <hr />
+                  <div>
                   Network: {network?.chainId} {network?.name}<br />
                   Account: {account}<br />
-                  Greet: {greet}<br />
+                  WalkerName: {walker}<br />
                   StatusMessage: {appMsg}<br />
-                  <hr />
-                  <i>Note: Please try Ropsten testnet by MetaMask.</i>
+                  </div>
                 </div>
+                <i>Test using Matic TestNet, 80001</i>
                 </header> 
             </div>
     )//end return
