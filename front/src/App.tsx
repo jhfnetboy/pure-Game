@@ -6,19 +6,35 @@ import './App.css';
 // import Web3ReactManager from '../components/Web3ReactManager'
 // import Routes from './routes'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faFighterJet } from '@fortawesome/free-solid-svg-icons'
 import { faDog } from '@fortawesome/free-solid-svg-icons'
-import { createExportAssignment } from 'typescript';
+import {useEffect, useState} from "react";
+// import Link from 'next / link';
+// import wallet_model from '../src/models/wallet_model';//models/wallet_model.ts
 
 // function App(): JSX.Element {
 function App(){  
-    const address = ""
-    const walkerName = "testWalkerName"
+
+  //   const {web3Loading, getweb3} = wallet_model ();
+  //   const [myWeb3, setMyWeb3] = useState ();
+
+  // async function connectWallet () {
+  //   // ​    await getweb3().then((response) => {
+  //   //   ​		setMyWeb3 (response);
+  //     const web3con = await getweb3()
+  //     setMyWeb3 (response)
+  //     // ​   response.eth.getAccounts().then((result) => (
+  //     //       console.log (result)
+  //     //     ))      
+  //     // })  
+  //   }
+
+    const address = "0x0bE9d4386f58022c27B0Fb035c46de7c5800938F" //should input from page
+    const walkerName = "testWalkerName" //should input from page
 
     async function mintWalker() {
       // if (!chainId) return
-      // const walker_json = require('../src/artifacts/contracts/Walker.sol/Walker.json')
-      // console.log(walker_json)
+      const walker_json = require('../src/') ///src/artifacts/contracts/Walker.sol/Walker.json
+      console.log(walker_json)
       // const provider = hre.ethers.getDefaultProvider(config['network'])
       // console.log(provider)
     }
@@ -27,22 +43,26 @@ function App(){
     let i = 0
     const txtList = ["My dog has been robbed by Cerberus？", "Oh my poor doggy!  I must save him in this weekend!", "So you carring on your umbrella and dog leash, down to the cellar.", "A adventure is beginging..."]
     function scroll(){
-      const scroll = document.getElementById('scroll')
-      if (i<4){
+      const scroll1 = document.getElementById('scroll')
+      if (i<4 && scroll1){
         console.log(i)
-        scroll.innerText = txtList[i] ? txtList[i] : ''
+          scroll1.innerText = txtList[i] ? txtList[i] : ''
         i = i +1
       } else{
         console.log('start')
-        scroll.innerText =""
+        if(scroll1){
+          scroll1.innerText =""
+        }
         end = true
         const play = document.getElementById('create')
-        play.style.display = 'inline';
+        if (play){
+          play.style.display = 'inline';
+        }
+        
       }
 
     }
     return (
-      !userState ?
             <div className="flex flex-col h-screen items-start overflow-x-hidden bg-custom-background">
                 <header className="App-header">
                 <div id="scroll" onClick={() => {scroll()}}>  What the hell? </div>
@@ -61,12 +81,11 @@ function App(){
                  
                 </div>
                 </div>
+                {/* <div>
+                {web3Loading? <button className =" btn-inner - text "disabled> Loading ... </button>: <button className =" btn-inner - text "onClick = {connectWallet}>get accounts</button>}
+                </div> */}
                 </header> 
             </div>
-
-          :
-          <div></div>
-           
     )
 }
 
