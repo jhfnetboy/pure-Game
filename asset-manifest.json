@@ -1,0 +1,22 @@
+{
+  "files": {
+    "main.css": "/pure-Game/static/css/main.a617e044.chunk.css",
+    "main.js": "/pure-Game/static/js/main.7bc9aa20.chunk.js",
+    "main.js.map": "/pure-Game/static/js/main.7bc9aa20.chunk.js.map",
+    "runtime-main.js": "/pure-Game/static/js/runtime-main.7a5bfcec.js",
+    "runtime-main.js.map": "/pure-Game/static/js/runtime-main.7a5bfcec.js.map",
+    "static/js/2.a87ad888.chunk.js": "/pure-Game/static/js/2.a87ad888.chunk.js",
+    "static/js/2.a87ad888.chunk.js.map": "/pure-Game/static/js/2.a87ad888.chunk.js.map",
+    "static/js/3.0e724055.chunk.js": "/pure-Game/static/js/3.0e724055.chunk.js",
+    "static/js/3.0e724055.chunk.js.map": "/pure-Game/static/js/3.0e724055.chunk.js.map",
+    "index.html": "/pure-Game/index.html",
+    "static/css/main.a617e044.chunk.css.map": "/pure-Game/static/css/main.a617e044.chunk.css.map",
+    "static/js/2.a87ad888.chunk.js.LICENSE.txt": "/pure-Game/static/js/2.a87ad888.chunk.js.LICENSE.txt"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.7a5bfcec.js",
+    "static/js/2.a87ad888.chunk.js",
+    "static/css/main.a617e044.chunk.css",
+    "static/js/main.7bc9aa20.chunk.js"
+  ]
+}
