@@ -68,21 +68,13 @@ function App(){
       //end wallet func
 
     //begin mint func
-    const address = "0x0bE9d4386f58022c27B0Fb035c46de7c5800938F" //should input from page
-    const walkerName = "testWalkerName" //should input from page
-    
     async function mintWalker() {
-      // if (!chainId) return
-      const walker_json = require('../src/') ///src/artifacts/contracts/Walker.sol/Walker.json
-      console.log(walker_json)
-      // const provider = hre.ethers.getDefaultProvider(config['network'])
-      // console.log(provider)
+      console.log(walkerID)
     } 
     //end mint func
 
     
     //begin scroll function
-    let end = false
     let i = 0
     const txtList = ["My dog has been robbed by Cerberus？", "Oh my poor doggy!  I must save him in this weekend!", "So you carring on your umbrella and dog leash, down to the cellar.", "A adventure is beginging..."]
     function scroll(){
@@ -96,7 +88,6 @@ function App(){
         if(scroll1){
           scroll1.innerText =""
         }
-        end = true
         const play = document.getElementById('create')
         if (play){
           play.style.display = 'inline';
