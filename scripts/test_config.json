@@ -1,0 +1,9 @@
+{
+  "private_key": "--0x689af8efa8c651a91ad287602527f3af2fe9f6501a7ac4b061667b5a93e037fd",
+  "network": "localhost",
+  "contract_address": "0x5fbdb2315678afecb367f032d93f642f64180aa3",
+  "name": "My Coin",
+  "symbol": "MCOIN",
+  "total_supply": "1000000000000000000000000",
+  "decimals": 18
+}
